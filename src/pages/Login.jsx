@@ -13,7 +13,7 @@ export default function Login() {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/auth/token",
+        "https://fast-api-notes.onrender.com/api/v1/auth/token",
         new URLSearchParams({ username: email, password }),
         { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
       );

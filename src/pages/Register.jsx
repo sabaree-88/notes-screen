@@ -12,7 +12,7 @@ export default function Register() {
 
   const handleRegister = async () => {
     try {
-      await axios.post("http://localhost:8000/api/v1/users/", {
+      await axios.post("https://fast-api-notes.onrender.com/api/v1/users/", {
         user_name: userName,
         user_email: email,
         password,

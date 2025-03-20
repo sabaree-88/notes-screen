@@ -24,7 +24,7 @@ export default function Dashboard() {
   // Function to fetch notes
   const fetchNotes = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/v1/notes/", {
+      const response = await axios.get("https://fast-api-notes.onrender.com/api/v1/notes/", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -47,7 +47,7 @@ export default function Dashboard() {
   const createNote = async () => {
     try {
       await axios.post(
-        "http://localhost:8000/api/v1/notes/",
+        "https://fast-api-notes.onrender.com/api/v1/notes/",
         {
           note_title: newNote.title,
           note_content: newNote.content,
@@ -74,7 +74,7 @@ export default function Dashboard() {
     }
 
     try {
-      await axios.delete(`http://localhost:8000/api/v1/notes/${noteId}`, {
+      await axios.delete(`https://fast-api-notes.onrender.com/api/v1/notes/${noteId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchNotes();
@@ -101,7 +101,7 @@ export default function Dashboard() {
 
     try {
       await axios.put(
-        `http://localhost:8000/api/v1/notes/${editingNote.note_id}`,
+        `https://fast-api-notes.onrender.com/api/v1/notes/${editingNote.note_id}`,
         {
           note_title: editData.title,
           note_content: editData.content,
